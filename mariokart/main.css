@@ -1,0 +1,368 @@
+/*// BASE STYLES //*/
+html, body{
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    margin: 0;
+  }
+  .grass, .sky, .road{
+    position: relative;
+  }
+  .sky{
+    height: 40%;
+    background-color: skyblue;
+    background-image: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,.33))
+  }
+  .grass{
+    height: 30%;
+    background-color: seagreen;
+    background-image: linear-gradient(to top, rgba(255,255,255,0) 75%, rgba(255,255,255,.25))
+  }
+  .road{
+    height: 30%;
+    background: dimgrey;
+    box-sizing: border-box;
+    border-top: 10px solid grey;
+    border-bottom: 10px solid grey;
+    width: 100%;
+  }
+  /*// ELEMENTS TO ANIMATE //*/
+  .mario{
+    position: absolute;
+    top: -50px;
+    left: 0;
+    animation-name: gofast;
+    animation-duration: 4s;
+    animation-direction: normal;
+    animation-fill-mode: none;
+    animation-delay: 0;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite ;
+    z-index: 5;
+  }
+
+  .luigi{
+    position: absolute;
+    top: 10px;
+    left: -50px;
+    z-index: 5;
+    animation-name: goslow;
+    animation-duration: 5.5s;
+    animation-direction: normal;
+    animation-fill-mode: none;
+    animation-delay: 0;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+
+  .soleil{
+    position: absolute;
+    width: 20%;
+    margin-left: -10%;
+    margin-top: -10%;
+    z-index: 1;
+  }
+
+  .banana{
+    position: absolute;
+    top: 85px;
+    left: 40%;
+    z-index: 1;
+    height: 40%;
+    animation-name: bananos;
+    animation-duration: 5.5s;
+    animation-direction: normal;
+    animation-fill-mode: none;
+    animation-delay: 0;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+
+  .pipe{
+    position: absolute;
+    top: 30%;
+    height: 80%;
+    width: 10%;
+    z-index: 3;
+    animation-name: tuyos;
+    animation-duration: 5s;
+    animation-direction: normal;
+    animation-fill-mode: none;
+    animation-delay: 0;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+
+  .plant{
+    position: absolute;
+    height: 50%;
+    left: 15px;
+    top: 90px;
+    z-index: 2;
+    animation-name: plantos;
+    animation-duration: 5s;
+    animation-direction: normal;
+    animation-fill-mode: none;
+    animation-delay: 0;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+
+  .toad{
+    position: absolute;
+    height: 50%;
+    top: 95px;
+    animation-name: toados;
+    animation-duration: 5s;
+    animation-direction: normal;
+    animation-fill-mode: none;
+    animation-delay: 0;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-delay: 2s;
+    visibility: hidden;
+  }
+
+  .cloud{
+    position: absolute;
+    top: 120px;
+    left: 0;
+  }
+  .cloud2{
+    position: absolute;
+    top: 20px;
+    right: 0;
+    max-width: 200px;
+    z-index: 3;
+  }
+  .cloud{
+    animation-name: nunuage;
+    animation-duration: 5s;
+    animation-direction: normal;
+    animation-fill-mode: none;
+    animation-delay: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    visibility: hidden;
+  }
+  
+  .cloud2{
+    animation-name: nunuage2;
+    animation-duration: 4s;
+    animation-direction: normal;
+    animation-fill-mode: none;
+    animation-delay: 0s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+
+  .lines{
+    box-sizing: border-box;
+    border: 5px dashed #fff;
+    height: 0px;
+    width: 6000px;
+    position: absolute;
+    top: 45%;
+    left: 0;
+    animation-name: autoroute;
+    animation-duration: 2s;
+    animation-direction: normal;
+    animation-fill-mode: none;
+    animation-delay: 0;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+  /*// KEYFRAMES //*/
+  @keyframes gofast {
+    0% {
+        margin-left: -20%;
+      }
+      45%{
+        margin-top: 0%;
+      }
+
+    50%{
+      margin-top: -5%;
+    }
+
+    55%{
+      margin-top: 0%
+    }
+
+      100% {
+        margin-left: 100%;
+
+      }
+  }
+
+  @keyframes goslow {
+    0% {
+      margin-left: -20%;
+    }
+
+    58%{
+      transform: rotateY(0deg);
+      animation-duration: 5.5s;
+    }
+
+    65%{
+      transform: rotateY(-360deg);
+      animation-duration: 6.5s;
+    }
+
+  75%{
+    transform: rotateY(0deg);
+    animation-duration: 5.5s;
+  }
+
+
+    100% {
+      margin-left: 100%;
+
+    }
+}
+
+
+  @keyframes nunuage2 {
+    from {
+      margin-right: -20%;
+    }
+  
+    to {
+      margin-right: 105%;
+
+    }
+  }
+
+  @keyframes nunuage {
+    from {
+      margin-left: 105%;
+    }
+  
+    to {
+      margin-left: -30%;
+      visibility: visible;
+    }
+  }
+
+  @keyframes autoroute {
+    from {
+      margin-left: 0%;
+    }
+  
+    to {
+      margin-left: -60%;
+      
+    }
+  }
+  
+  @keyframes bananos {
+    from {
+      margin-left: 100%;
+    }
+  
+    to {
+      margin-left: -60%;
+      
+    }
+  }
+
+  @keyframes tuyos {
+    0% {
+      margin-left: 120%;
+    }
+  
+    100% {
+      margin-left: -15%;
+
+    }
+  }
+
+  @keyframes plantos {
+    0% {
+      margin-left: 120%;
+    }
+
+    40% {
+      margin-top: 0%;
+    }
+
+    55% {
+      margin-top: -6%;
+    }
+
+    70% {
+      margin-top: 0%;
+    }
+
+    80% {
+      margin-top: 0%;
+    }
+
+    95% {
+      margin-top: -6%;
+    }
+
+    100% {
+      margin-left: -15%;
+
+    }
+  }
+
+  @keyframes toados {
+    0% {
+      margin-left: 120%;
+      visibility: visible;
+    }
+  
+    35%{
+      margin-top: 0%;
+    }
+
+  40%{
+    margin-top: -5%;
+  }
+
+  45%{
+    margin-top: 0%
+  }
+
+
+  55%{
+    margin-top: 0%;
+  }
+
+  60%{
+  margin-top: -5%;
+  }
+
+  65%{
+  margin-top: 0%
+  }
+  
+  75%{
+    margin-top: 0%;
+  }
+
+  80%{
+  margin-top: -5%;
+  }
+
+  85%{
+  margin-top: 0%
+  }
+
+  90%{
+    margin-top: 0%;
+  }
+
+  95%{
+  margin-top: -5%;
+  }
+
+
+    100% {
+      margin-left: -15%;
+      margin-top: 0%
+    }
+  }
